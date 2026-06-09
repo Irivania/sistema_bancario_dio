@@ -1,78 +1,173 @@
-# sistema_bancario_dio
+# Sistema Bancário em Python - Versão 2
 
-Sistema Bancário em Python
-Descrição
+## Descrição
 
-Este projeto consiste no desenvolvimento de um Sistema Bancário simples utilizando Python. O objetivo é simular operações bancárias básicas, permitindo que o usuário realize depósitos, saques e consulte o extrato da conta através de um menu interativo no terminal.
+Este projeto foi desenvolvido como parte do desafio prático da DIO (Digital Innovation One) com o objetivo de aprimorar um sistema bancário simples utilizando funções em Python.
 
-O projeto foi desenvolvido como prática dos conceitos fundamentais da linguagem Python, incluindo estruturas condicionais, laços de repetição, manipulação de variáveis e formatação de saída.
+A aplicação permite realizar operações bancárias básicas, como depósitos, saques e consulta de extrato, além de cadastrar usuários, criar contas correntes e listar contas cadastradas.
 
-Funcionalidades
-Depósito
-Permite realizar depósitos em conta.
-Aceita apenas valores positivos.
-Todos os depósitos são registrados no extrato.
-Saque
-Permite realizar saques da conta.
-Limite máximo de R$ 500,00 por saque.
-Limite de 3 saques por execução do sistema.
-Não permite saques com saldo insuficiente.
-Todos os saques são registrados no extrato.
-Extrato
-Exibe todas as movimentações realizadas.
-Apresenta o saldo atual da conta.
-Caso não existam movimentações, informa ao usuário.
-Tecnologias Utilizadas
-Python 3
-Como Executar o Projeto
-Certifique-se de ter o Python instalado em sua máquina.
-Faça o download ou clone este repositório:
-git clone https://github.com/seu-usuario/sistema-bancario-python.git
-Acesse a pasta do projeto:
-cd sistema-bancario-python
-Execute o arquivo principal:
-python sistema_bancario.py
-Exemplo de Uso
-[d] Depositar
-[s] Sacar
-[e] Extrato
-[q] Sair
+O projeto aplica conceitos importantes da linguagem Python, como funções, listas, dicionários, parâmetros posicionais e nomeados, modularização de código e boas práticas de programação.
 
-=> d
-Informe o valor do depósito: R$ 100
+---
 
-=> s
-Informe o valor do saque: R$ 50
+## Funcionalidades
 
-=> e
+### Depósito
 
-================ EXTRATO ================
-Depósito: R$ 100.00
-Saque: R$ 50.00
+* Permite realizar depósitos em conta.
+* Aceita apenas valores positivos.
+* Registra todas as movimentações no extrato.
 
-Saldo: R$ 50.00
-=========================================
-Estrutura do Projeto
-sistema-bancario-python/
+### Saque
+
+* Limite de 3 saques por execução.
+* Limite de R$ 500,00 por saque.
+* Não permite saque sem saldo suficiente.
+* Registra todas as movimentações no extrato.
+
+### Extrato
+
+* Exibe todas as movimentações realizadas.
+* Exibe o saldo atual da conta.
+* Informa quando não houver movimentações.
+
+### Cadastro de Usuários
+
+* Armazena usuários em uma lista.
+* Cada usuário possui:
+
+  * Nome
+  * Data de nascimento
+  * CPF
+  * Endereço
+* Não permite CPF duplicado.
+
+### Cadastro de Contas Correntes
+
+* Agência fixa: 0001.
+* Número da conta gerado automaticamente de forma sequencial.
+* Cada conta é vinculada a um usuário através do CPF.
+* Um usuário pode possuir várias contas.
+
+### Listagem de Contas
+
+* Exibe todas as contas cadastradas.
+* Mostra agência, número da conta e titular.
+
+---
+
+## Tecnologias Utilizadas
+
+* Python 3
+
+---
+
+## Estrutura do Projeto
+
+```text
+sistema_bancario_dio/
 │
 ├── sistema_bancario.py
 └── README.md
-Objetivos de Aprendizagem
+```
 
-Este projeto permite praticar:
+---
 
-Sintaxe básica do Python;
-Estruturas de decisão (if, elif, else);
-Estruturas de repetição (while);
-Manipulação de strings;
-Controle de fluxo;
-Desenvolvimento de aplicações em linha de comando (CLI).
-Melhorias Futuras
-Cadastro de clientes;
-Criação de múltiplas contas;
-Transferências entre contas;
-Persistência de dados em arquivos ou banco de dados;
-Interface gráfica.
-Autor
+## Conceitos Aplicados
 
-Projeto desenvolvido como parte dos estudos de Python e dos desafios práticos da plataforma DIO (Digital Innovation One). 🚀
+* Funções
+* Listas
+* Dicionários
+* Estruturas condicionais
+* Estruturas de repetição
+* Modularização de código
+* Parâmetros posicionais (`/`)
+* Parâmetros nomeados (`*`)
+* Manipulação de strings
+
+---
+
+## Regras Implementadas
+
+### Depósito
+
+Recebe argumentos apenas por posição:
+
+```python
+depositar(saldo, valor, extrato, /)
+```
+
+### Saque
+
+Recebe argumentos apenas por nome:
+
+```python
+sacar(
+    *,
+    saldo,
+    valor,
+    extrato,
+    limite,
+    numero_saques,
+    limite_saques
+)
+```
+
+### Extrato
+
+Recebe argumentos posicionais e nomeados:
+
+```python
+exibir_extrato(
+    saldo,
+    /,
+    *,
+    extrato
+)
+```
+
+---
+
+## Como Executar
+
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/seu-usuario/sistema_bancario_dio.git
+```
+
+2. Entre na pasta do projeto:
+
+```bash
+cd sistema_bancario_dio
+```
+
+3. Execute o programa:
+
+```bash
+python sistema_bancario.py
+```
+
+---
+
+## Exemplo de Menu
+
+```text
+================ MENU ================
+
+[d] Depositar
+[s] Sacar
+[e] Extrato
+[nu] Novo Usuário
+[nc] Nova Conta
+[lc] Listar Contas
+[q] Sair
+
+=>
+```
+
+---
+
+## Autor
+
+Projeto desenvolvido como parte dos desafios de Python da DIO para prática de lógica de programação, estruturas de dados e modularização de código.
