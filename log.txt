@@ -1,0 +1,3 @@
+Data/Hora: 12-06-2026 20:00:01 | Função: depositar | Argumentos: (<__main__.ContaCorrente object at 0x0000024BE9D1D010>, 3000.0), {} | Retorno: True
+Data/Hora: 12-06-2026 20:00:09 | Função: sacar | Argumentos: (<__main__.ContaCorrente object at 0x0000024BE9D1D010>, 500.0), {} | Retorno: True
+Data/Hora: 12-06-2026 20:00:53 | Função: depositar | Argumentos: (<__main__.ContaCorrente object at 0x0000024BE9D22210>, 2000.0), {} | Retorno: True
